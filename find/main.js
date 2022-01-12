@@ -2,12 +2,44 @@
 // changeColor(grandparent)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // --------------------
 
+// const grandparent = document.getElementById("khaan-daee");
 
-// const parents = document.getElementsByClassName("parent");
+// const parents = grandparent.getElementsByClassName("parent");
+
 // const parentsArray = Array.from(parents);
-// parentsArray.forEach(changeColor)
+
+// parents.forEach(changeColor)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // --------------------
@@ -17,11 +49,29 @@
 // changeColor(grandparent)
 
 
+
+
+
+
+
+
+
+
+
+
 // --------------------
 
 
 // const grandparent = document.querySelector(".grandparent")
 // changeColor(grandparent)
+
+
+
+
+
+
+
+
 
 
 // --------------------
@@ -31,6 +81,18 @@
 // changeColor(parent)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // --------------------
 
 
@@ -38,33 +100,87 @@
 // parents.forEach(changeColor)
 
 
+
+
+
+
+
+
+
+
+
+
+
 // --------------------
 
 
 // const grandparent = document.getElementById("khaan-daee");
+
 // const parents = grandparent.children
+
 // const parentsArray = Array.from(parents)
+
 // parentsArray.forEach(changeColor)
-// // const firstChild = parents[0].children[0]
-// // changeColor(firstChild)
+
+// const firstChild = parents[1].children[1]
+// changeColor(firstChild)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // --------------------
 
 
 // const grandparent = document.getElementById("khaan-daee");
-// const firstParent = grandparent.children[0]
+// const firstParent = grandparent.children[1]
 // const firstChild = firstParent.querySelector(".child")
 // changeColor(firstChild)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // --------------------
 
 
 // const child = document.getElementById("abbas")
+
+
+
 // const parent = child.parentElement
 // changeColor(parent)
-// // changeColor(parent.parentElement)
+// changeColor(parent.parentElement)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // --------------------
@@ -75,13 +191,48 @@
 // changeColor(grandparent)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // --------------------
+
+
+// const abbas = document.getElementById("abbas")
+
+// changeColor(abbas.previousElementSibling)
+
+
+
+
+
+
 
 
 // const childOne = document.getElementById("abbas")
 // const childTow = childOne.nextElementSibling
 // changeColor(childTow)
 // // changeColor(childTow.previousElementSibling)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // --------------------

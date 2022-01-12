@@ -1,0 +1,9 @@
+{
+    "title": "JavaScript Object Notation",
+    "number": 12.3,
+    "boolean": true,
+    "list": [1, 2, 3, "Hello", false],
+    "nested": {
+        "sample": "foo bar baz"
+    }
+}
