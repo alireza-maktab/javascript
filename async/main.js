@@ -176,8 +176,9 @@
 
 
 
-// function afterLoad(e) {
-//     const xhr = e.target;
+// function afterLoad(event) {
+//     console.log(event)
+//     const xhr = event.target;
 //     const data = JSON.parse(xhr.response)
 //     console.log(data)
 // }
@@ -189,7 +190,7 @@
 
 
 
-const url = 'https://api.sampleapis.com/coffee/hot'
+// const url = 'https://api.sampleapis.com/coffee/hot'
 
 // const req = new XMLHttpRequest();
 // req.addEventListener("load", afterLoad);
@@ -214,30 +215,48 @@ const url = 'https://api.sampleapis.com/coffee/hot'
 
 
 
-// function get(apiUrl, abbasBoazar) {
+// function get(apiUrl, callback) {
 //     const req = new XMLHttpRequest();
+    
 //     const handleLoad = (event) => {
 //         let result;
 //         let error;
 //         if (event.target.status === 200) {
 //             result = JSON.parse(event.target.response)
 //         } else {
-//             error = "Error: something went wrong"
+//             error = "somethings went wrong!"
 //         }
-//         abbasBoazar(error, result)
+//         callback(error, result)
 //     }
+//     req.addEventListener("load", handleLoad);
 //     req.open("GET", apiUrl);
 //     req.send();
-//     req.addEventListener("load", handleLoad);
 // }
 
-// const result = get(url, (error, result) => {
-//     if (error) {
-//         console.error(error);
-//     } else {
-//         console.log(result)
-//     }
-// });
+
+
+
+// const handleRequest = (error, result) => {
+//         if (error) {
+//             alert("try again")
+//         } else {
+//             console.log(result)
+//         }
+// }
+
+// get('https://api.sampleapis.com/coffee/hot', handleRequest);
+
+// console.log("end")
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -372,45 +391,45 @@ const url = 'https://api.sampleapis.com/coffee/hot'
 
 
 
-const coffeeSampleApiURL = 'https://api.sampleapis.com/coffee/hot'
+// const coffeeSampleApiURL = 'https://api.sampleapis.com/coffee/hot'
 
 
-function get(baseUrl) {
-    const promise = new Promise((resolve, reject) => {
-        const onLoad = (e) => {
-            const xhr = e.target;
-            if (xhr.status !== 200) {
-                const error = xhr.statusText
-                reject(error)
-                return
-            }
-            const data = JSON.parse(xhr.response)
-            resolve(data)
-        }
-        const req = new XMLHttpRequest();
-        req.addEventListener("load", onLoad);
-        req.open("GET", baseUrl);
-        req.send();
-    })
-    return promise;
-}
+// function get(baseUrl) {
+//     const promise = new Promise((resolve, reject) => {
+//         const onLoad = (e) => {
+//             const xhr = e.target;
+//             if (xhr.status !== 200) {
+//                 const error = xhr.statusText
+//                 reject(error)
+//                 return
+//             }
+//             const data = JSON.parse(xhr.response)
+//             resolve(data)
+//         }
+//         const req = new XMLHttpRequest();
+//         req.addEventListener("load", onLoad);
+//         req.open("GET", baseUrl);
+//         req.send();
+//     })
+//     return promise;
+// }
 
 
-let howManyDoSomethingCalled = 0
+// let howManyDoSomethingCalled = 0
 
-function doSomething() {
-    const abbas = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            howManyDoSomethingCalled++
-            if (howManyDoSomethingCalled === 3) {
-                reject("something went wrong")
-            } else {
-                resolve(2)
-            }
-        }, 100)
-    })
-    return abbas
-}
+// function doSomething() {
+//     const abbas = new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             howManyDoSomethingCalled++
+//             if (howManyDoSomethingCalled === 3) {
+//                 reject("something went wrong")
+//             } else {
+//                 resolve(2)
+//             }
+//         }, 100)
+//     })
+//     return abbas
+// }
 
 
 
@@ -434,6 +453,86 @@ function doSomething() {
 
 
 
+// fetch("https://api.sampleapis.com/coffee/hot")
+// .then((res) => {
+//     const body = res.json();
+//     console.log(body);
+//     return body
+// }).then(data => {
+//     console.log(data);
+//     throw 'err1'
+//     return data
+// }).then(result => {
+//     console.log(result[0]);
+//     return result[0]
+// }).then(result => {
+//     console.log(result.title)
+//     return result.title
+// }).catch(err => {
+//     console.log(err === "err1" ? "oops" : "well")
+// }).finally(() => {
+//     console.log("finish")
+// })
+
+
+
+
+
+
+// function getCoffeeDetail(id) {
+//     const fetchResultPromise = fetch("https://api.sampleapis.com/coffee/hot")
+    
+//     function thenCallback1(fetchFinalResult) {
+//         const serverResponseInJson = fetchFinalResult.json();
+//         console.log(serverResponseInJson)
+//         return serverResponseInJson
+//     }
+    
+//     const thenResultPromise1 = fetchResultPromise.then(thenCallback1)
+    
+//     function thenCallback2(preThenResult) {
+//         console.log(preThenResult)
+//     }
+    
+//     thenResultPromise1.then(thenCallback2)
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function getCoffeeDetail(id) {
+//     const checkIsCorrectCoffee = coffee => coffee.id === id
+//     return fetch("https://api.sampleapis.com/coffee/hot")
+//     .then(responseObj => responseObj.json())
+//     .then(data => data.find(checkIsCorrectCoffee))
+    
+// }
+
+
+
+
+
+// getCoffeeDetail(6).then(coffeeDetail => {
+//     if (coffeeDetail.title === "Doppio") {
+//         alert("Done")
+//     } else {
+//         alert("There is some problems")
+//     }
+// })
+
+
+
+
+
 
 
 // ---------------------
@@ -449,14 +548,14 @@ function doSomething() {
 
 
 
-Promise.all([
-    get(coffeeSampleApiURL), 
-    doSomething(),
-    doSomething(),
-    doSomething(),
-]).then((results) => {
-    console.log(results)
-}).catch(err => alert(err))
+// Promise.all([
+//     get(coffeeSampleApiURL), 
+//     doSomething(),
+//     doSomething(),
+//     doSomething(),
+// ]).then((results) => {
+//     console.log(results)
+// }).catch(err => alert(err))
 
 
 
